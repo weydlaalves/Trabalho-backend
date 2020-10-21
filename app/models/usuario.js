@@ -1,0 +1,26 @@
+const mongoose = require('mongoose');
+
+module.exports = function(){
+    let schema = mongoose.Schema({
+        id: {
+            type: [String],
+            required: true,
+            index: {
+                unique: true,
+            }
+        },
+        nome: {
+            type: String,
+            required: true,
+        },
+        email: {
+            type: String,
+            required: true,
+        },  
+        senha: {
+            type: String,
+            required: true,
+        }      
+    });
+    return mongoose.model('usuario', schema);
+}();
